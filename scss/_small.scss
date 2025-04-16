@@ -1,0 +1,181 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+@keyframes dropDown {
+    from {
+        transform: perspective(600px) translate3d(0, -60px, -2000px) rotateX(75deg);
+        opacity: 0;
+    }
+    5% { transform: perspective(600px) translate3d(0, -60px, -1500px) rotateX(75deg) }
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/*  Apply a natural box layout model to all elements  */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} // end all elements
+
+
+/* --------------------------- BODY --------------------------- */
+body {
+    font-family: $defaultFont;
+    font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/* --------------------------- HEADER --------------------------- */
+#headerWrapper {border-bottom: 1px solid $greyColor;}
+header {
+    display: grid;
+    grid-template-columns: 50px auto;
+    column-gap: $gutter;
+    align-items: center; //vertically
+    padding: .5rem $gutter;
+    span {
+        font-size: 1.6rem;
+        font-weight: $lightWeight;
+        color: $primaryColor;
+    }
+} // end header
+
+
+/* --------------------------- NAVIGATION STUFF GOES HERE --------------------------- */
+nav {
+    background-color: $primaryColor;    
+}
+// add default trigram from heaven
+    #myButton::before {
+        content: "\2630";
+    } 
+    // style the botton
+    #myButton {
+        border: none;
+        background: none;
+        color: black;
+        font-size: 2rem;
+        padding: 0;
+        width: 44px;
+        height: 44px;
+        font-weight: $lightWeight;
+        cursor: pointer;
+    }
+    ul.menuLinks {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: none;
+    }
+    li a {
+        color: #fff;
+        display: block;
+        padding: .75rem $gutter;
+        text-decoration: none;
+        }
+    li.active a {
+    background-color: rgba(255 , 255 , 255 , 0.2);
+}
+ // end unordered
+
+    ul.open.menuLinks {
+        display: block;
+}
+#myButton.open::before {
+    content: "x";
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    h5 {
+        position: absolute;
+        top: 50%;
+        background: #000000;
+background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+        font-size: 5vw;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+        padding: 16px;
+    }
+}
+
+
+
+/* --------------------------- MAIN --------------------------- */
+main {
+    h1 {
+        padding: 1rem $gutter.5rem $gutter;
+        font-size: 1.5rem;
+        color: $secondaryColor;
+        font-weight: $lightWeight
+    }
+    p {
+        padding: .5rem $gutter;
+        color: #333;
+        line-height: $leading;
+    }
+}// end main
+
+
+
+/* --------------------------- FOOTER --------------------------- */
+#footerWrapper {
+    background-color: $primaryColor
+} // end footer wrapper
+
+footer {
+    font-size: .85rem;
+    padding: 1rem $gutter;
+    color: $greyColor;
+    text-align: center;
+    line-height: $leading;
+    a {color: $greyColor;}
+}// end footer
+.logo {
+    width: 50px;
+}
+.cardContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    .card {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 10px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        border-radius: 6px;
+        gap: 4px;
+        a {
+            padding: 4px;
+            background-color: #00594F;
+            border-radius: 14px;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+        }
+        img {
+            width: 40px;
+            animation-name: dropDown;
+            animation-duration: 1s;
+        }
+    }
+}
+#reviews {
+    text-align: center;
+    margin-top: 100px;
+    color: #00594F;
+}
+#myButton::before {
+    content: "\2630";
+} 
