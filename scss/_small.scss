@@ -33,7 +33,7 @@ body {
 #headerWrapper {border-bottom: 1px solid $greyColor;}
 header {
     display: grid;
-    grid-template-columns: 50px auto;
+    grid-template-columns: 75px auto;
     column-gap: $gutter;
     align-items: center; //vertically
     padding: .5rem $gutter;
