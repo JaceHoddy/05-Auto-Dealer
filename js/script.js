@@ -26,7 +26,7 @@ for (let x = 0; x < reviews.length; x++) {
 for (let step = 0; step < reviews[x].stars; step++) {
     const genIndicator = document.createElement('img');
     genIndicator.width = 20
-    genIndicator.src = "icons\star-sharp-svgrepo-com.svg";
+    genIndicator.src = "./icons/star-sharp-svgrepo-com.svg";
     myRating.appendChild(genIndicator);
 }
     // build the figure with child elements
